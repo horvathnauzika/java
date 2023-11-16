@@ -278,11 +278,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Vegyes"/>
           </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="cboxvegyesItemStateChanged"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="cboxkek">
           <Properties>
             <Property name="text" type="java.lang.String" value="K&#xe9;k"/>
           </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="cboxkekItemStateChanged"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="cboxlila">
           <Properties>

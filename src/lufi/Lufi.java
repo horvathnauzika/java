@@ -21,6 +21,8 @@ public class Lufi extends javax.swing.JFrame {
     private int szinAr;
     private int sargaAr;
     private int lilaAr;
+    private int kekAr;
+    private int vegyesAr;
 
     /**
      * Creates new form Lufi
@@ -144,8 +146,18 @@ public class Lufi extends javax.swing.JFrame {
         });
 
         cboxvegyes.setText("Vegyes");
+        cboxvegyes.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cboxvegyesItemStateChanged(evt);
+            }
+        });
 
         cboxkek.setText("Kék");
+        cboxkek.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cboxkekItemStateChanged(evt);
+            }
+        });
 
         cboxlila.setText("Lila");
         cboxlila.addItemListener(new java.awt.event.ItemListener() {
@@ -336,13 +348,13 @@ public class Lufi extends javax.swing.JFrame {
     private void cboxsargaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboxsargaItemStateChanged
         if(cboxsarga.isSelected()){
             sargaAr = 100;
-            szinAr = sargaAr;
+            szinAr = sargaAr + lilaAr + kekAr + vegyesAr;
             veglegesArKiirasa();
         }
         
         if(cboxsarga.isSelected() == false){
             sargaAr = 0;
-            szinAr = sargaAr;
+            szinAr = sargaAr + lilaAr + kekAr + vegyesAr;
             veglegesArKiirasa();
         }
     }//GEN-LAST:event_cboxsargaItemStateChanged
@@ -350,16 +362,44 @@ public class Lufi extends javax.swing.JFrame {
     private void cboxlilaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboxlilaItemStateChanged
         if(cboxlila.isSelected()){
             lilaAr = 100;
-            szinAr = sargaAr + lilaAr;
+            szinAr = sargaAr + lilaAr + kekAr + vegyesAr;
             veglegesArKiirasa();
         }
         
         if(cboxlila.isSelected() == false){
             lilaAr = 0;
-            szinAr = sargaAr + lilaAr;
+            szinAr = sargaAr + lilaAr + kekAr + vegyesAr;
             veglegesArKiirasa();
         }
     }//GEN-LAST:event_cboxlilaItemStateChanged
+
+    private void cboxkekItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboxkekItemStateChanged
+                if(cboxkek.isSelected()){
+            kekAr = 100;
+            szinAr = sargaAr + lilaAr + kekAr + vegyesAr;
+            veglegesArKiirasa();
+        }
+        
+        if(cboxkek.isSelected() == false){
+            kekAr = 0;
+            szinAr = sargaAr + lilaAr + kekAr + vegyesAr;
+            veglegesArKiirasa();
+        }
+    }//GEN-LAST:event_cboxkekItemStateChanged
+
+    private void cboxvegyesItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboxvegyesItemStateChanged
+                        if(cboxvegyes.isSelected()){
+            vegyesAr = 100;
+            szinAr = sargaAr + lilaAr + kekAr + vegyesAr;
+            veglegesArKiirasa();
+        }
+        
+        if(cboxvegyes.isSelected() == false){
+            vegyesAr = 0;
+            szinAr = sargaAr + lilaAr + kekAr + vegyesAr;
+            veglegesArKiirasa();
+        }
+    }//GEN-LAST:event_cboxvegyesItemStateChanged
 
     /**
      * @param args the command line arguments

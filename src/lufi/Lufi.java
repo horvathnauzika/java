@@ -348,7 +348,17 @@ public class Lufi extends javax.swing.JFrame {
     }//GEN-LAST:event_cboxsargaItemStateChanged
 
     private void cboxlilaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboxlilaItemStateChanged
-
+        if(cboxlila.isSelected()){
+            lilaAr = 100;
+            szinAr = sargaAr + lilaAr;
+            veglegesArKiirasa();
+        }
+        
+        if(cboxlila.isSelected() == false){
+            lilaAr = 0;
+            szinAr = sargaAr + lilaAr;
+            veglegesArKiirasa();
+        }
     }//GEN-LAST:event_cboxlilaItemStateChanged
 
     /**
